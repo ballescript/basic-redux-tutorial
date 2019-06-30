@@ -10,6 +10,8 @@ const getVisibleToDos = (toDos, filter) => {
             return toDos.filter(t => t.completed);
         case 'SHOW_ACTIVE':
             return toDos.filter(t => !t.completed);
+        default:
+            throw new Error('Unknown filter: ' + filter)        
     }
 }
 

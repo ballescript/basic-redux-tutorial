@@ -22,13 +22,14 @@ function toDos(state = [], action) {
             return [
                 ...state,
                 {
+                    id: action.id,
                     text: action.text,
                     completed: false,
                 }
             ];
         case TOGGLE_TODO:
-            return state.map((toDo, index) => {
-                if (index === action.index) {
+            return state.map((toDo, id) => {
+                if (id === action.id) {
                     return Object.assign({}, toDo, {
                         completed: !toDo.completed,
                     })

@@ -4,8 +4,8 @@ import ToDo from './ToDo';
 
 const ToDoList = ({ toDos, onToDoClick }) => (
     <ul>
-        {toDos.map((toDo, index) => (
-            <ToDo key={index} {...toDo} onClick={() => onToDoClick(index)} />
+        {toDos.map(toDo => (
+            <ToDo key={toDo.id} {...toDo} onClick={() => onToDoClick(toDo.id)} />
         ))}
     </ul>
 )
